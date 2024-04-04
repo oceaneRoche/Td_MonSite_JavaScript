@@ -23,8 +23,12 @@ document.onreadystatechange = function () {
             console.log("un compte")
             console.log("compte = " + compteSession)
             compte = JSON.parse(compteSession)
-
-
+            for( let i=0;i<connecte.length;i++){
+                connecte[i].style.display ="";
+            }
+            for( let i=0;i<connecte.length;i++){
+                deconnecte[i].style.display ="none";
+            }
         }
         document.getElementById("login").oninput = function () {
             console.log("onchange")
@@ -32,7 +36,7 @@ document.onreadystatechange = function () {
         }
         document.getElementById("password").oninput = function () {
             console.log("onchange")
-
+            document.getElementById("submit").disabled=false;
         }
 
         document.getElementById("submit").onclick = function ( ) {
